@@ -8,7 +8,9 @@ build/
 
 ### Properties ###
 application-oauth.properties
-
+application-realdb.properties
+application-custom.properties
+application-localdb.properties
 
 ### STS ###
 .apt_generated
