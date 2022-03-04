@@ -30,7 +30,7 @@ const SignIn = ({ isOpened, children, onClose }) => {
   const handleAuthClick = (e) => {
     const path = e.target.dataset.auth;
     cookies.set("path", path, { path: "/" });
-    window.location.href = `/3.39.80.116:8080/api/v1/login/${path}`;
+    window.location.href = `http://3.39.80.116:8080/api/v1/login/${path}`;
   };
 
   return createPortal(
