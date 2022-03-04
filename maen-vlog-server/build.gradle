@@ -63,7 +63,7 @@ jar {
     enabled(false)
 }
 
-def frontendDir = "C:/Users/Bang/Desktop/projects/maen-vlog-aws/maen-vlog-client"
+def frontendDir = "/home/ec2-user/app/step1/maen-vlog-aws/maen-vlog-client"
 sourceSets {
     main {
         resources {
