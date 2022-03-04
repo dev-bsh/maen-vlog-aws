@@ -30,7 +30,7 @@ const SignIn = ({ isOpened, children, onClose }) => {
   const handleAuthClick = (e) => {
     const path = e.target.dataset.auth;
     cookies.set("path", path, { path: "/" });
-    window.location.href = `/api/v1/login/${path}`;
+    window.location.href = `http://ec2-3-39-80-116.ap-northeast-2.compute.amazonaws.com/api/v1/login/${path}`;
   };
 
   return createPortal(

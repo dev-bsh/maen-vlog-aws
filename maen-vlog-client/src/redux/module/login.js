@@ -13,11 +13,14 @@ const DELETE_USER = "DELETE_USER";
 // action
 
 export const loginRequest = (path, authCode) => async (dispatch) => {
-  const response = await axios.get(`http://localhost:8080/api/v1/jwt/${path}`, {
-    params: {
-      code: authCode,
-    },
-  });
+  const response = await axios.get(
+    `http://ec2-3-39-80-116.ap-northeast-2.compute.amazonaws.com:8080/api/v1/jwt/${path}`,
+    {
+      params: {
+        code: authCode,
+      },
+    }
+  );
   cookies.set("user", response.data, { path: "/" });
   cookies.set("isLoggedIn", true, { path: "/" });
 
@@ -32,11 +35,14 @@ export const logoutRequset = (userId) => async (dispatch) => {
 
 export const deleteUser = (userId) => async (dispatch) => {
   expireToken();
-  const response = await axios.delete(`api/v2/user/${userId}`, {
-    headers: {
-      ACCESS_TOKEN: cookies.get("user").accessToken,
-    },
-  });
+  const response = await axios.delete(
+    `http://ec2-3-39-80-116.ap-northeast-2.compute.amazonaws.com/api/v2/user/${userId}`,
+    {
+      headers: {
+        ACCESS_TOKEN: cookies.get("user").accessToken,
+      },
+    }
+  );
 
   cookies.remove("isLoggedIn");
   cookies.remove("user");

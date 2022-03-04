@@ -12,7 +12,7 @@ const expireToken = async () => {
     },
   };
   const validation = await axios.get(
-    "http://localhost:8080/api/v1/jwt/expired",
+    "http://ec2-3-39-80-116.ap-northeast-2.compute.amazonaws.com:8080/api/v1/jwt/expired",
     config
   ).data;
 
@@ -20,7 +20,7 @@ const expireToken = async () => {
     return;
   } else {
     const response = await axios.get(
-      "http://localhost:8080/api/v1/jwt/refresh",
+      "http://ec2-3-39-80-116.ap-northeast-2.compute.amazonaws.com:8080/api/v1/jwt/refresh",
       {
         headers: {
           REFRESH_TOKEN: refreshToken,
